@@ -18,9 +18,18 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:2024.0.0") // or latest compatible
+	}
+}
+
+
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-batch")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.cloud:spring-cloud-starter-task")
+	implementation("org.springframework.cloud:spring-cloud-task-core")
 	implementation("org.apache.pdfbox:pdfbox:2.0.28")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")

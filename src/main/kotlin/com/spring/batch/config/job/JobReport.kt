@@ -1,5 +1,6 @@
-package com.spring.batch.config;
+package com.spring.batch.config.job
 
+import com.spring.batch.config.ProcessedDataHolder
 import com.spring.batch.domain.dto.Transaction
 import mu.KotlinLogging
 import org.springframework.batch.core.Job
@@ -23,13 +24,12 @@ import javax.sql.DataSource
 
 @Configuration
 @EnableBatchProcessing
-class BatchConfig (
+class JobReport(
     private val jobRepository: JobRepository,
     private val transactionManager: PlatformTransactionManager,
     private val dataSource: DataSource,
-    private val processedDataHolder: ProcessedDataHolder
-    ) {
-
+    private val processedDataHolder: ProcessedDataHolder,
+) {
     private val processedChunks = mutableListOf<List<Transaction>>()
     private val log = KotlinLogging.logger {}
 

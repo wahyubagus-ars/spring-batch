@@ -1,16 +1,18 @@
-package com.spring.batch.config
+package com.spring.batch.config.job
 
+import com.spring.batch.config.ProcessedDataHolder
 import com.spring.batch.domain.dto.Transaction
 import mu.KotlinLogging
 import org.springframework.batch.core.ExitStatus
 import org.springframework.batch.core.JobExecution
+import org.springframework.batch.core.JobExecutionListener
 import org.springframework.batch.core.listener.JobExecutionListenerSupport
 import org.springframework.stereotype.Component
 
 @Component
 class JobCompletionListener(
     private val processedDataHolder: ProcessedDataHolder
-) : JobExecutionListenerSupport() {
+) : JobExecutionListener {
 
     private val log = KotlinLogging.logger {}
 

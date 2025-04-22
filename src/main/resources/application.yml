@@ -3,10 +3,13 @@ spring:
     name: batch
   datasource:
     url: jdbc:mysql://localhost:3306/transaction_service
-    username: vgnc
+    username: admin123
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
     jdbc:
       initialize-schema: always
+  cloud:
+    task:
+      initialize-enabled: true
 
