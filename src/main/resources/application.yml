@@ -2,9 +2,9 @@ spring:
   application:
     name: batch
   datasource:
-    url: jdbc:mysql://localhost:3306/transaction_service
-    username: admin123
-    password: root
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
     jdbc:
@@ -12,4 +12,3 @@ spring:
   cloud:
     task:
       initialize-enabled: true
-
